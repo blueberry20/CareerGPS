@@ -1,0 +1,362 @@
+﻿
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    height:100%;
+}
+
+html {
+    height:100%;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.container {
+    /*min-height:100%;
+    padding:0;
+    max-width:100%;*/
+    font-family: 'Roboto', sans-serif;
+}
+
+.mainContainer {
+    background-repeat:no-repeat;
+    background-position:0 -20px;
+    background-image: url('images/background1.jpg');
+    background-size:cover;
+    min-height:100%;
+    padding: 2em 2em 0;
+    background-attachment:fixed;
+}
+
+.navbar-nav {
+    float:right;
+}
+
+.body-content {
+    padding:0;
+}
+
+ #aboutUs {
+    background-color:#64cfda;
+    background-size:cover;
+    min-height:100%;
+    padding: 2em;
+   
+}
+
+#box {
+  width: 80%;
+  background-color: rgba(255,255,255,0.7);
+  padding: 1em;
+  margin: 3% auto 0;
+}
+
+#parentStudentBox, .flexDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /*align-items: center;
+  align-content: flex-start;*/
+}
+
+#parentStudentBox .column {
+    text-align:center;
+}
+
+.textCenter {
+    text-align:center;
+}
+
+.column {
+    width:50%;
+}
+
+#parentStudentBox p {
+    margin: 1em 1em 2em;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #000;
+    font-weight:700;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    padding-left:50px;
+    color:#000;
+}
+
+h2{
+    color:#000;
+}
+
+h3{
+  width: 100%;
+  text-align: center;
+  font-weight:700;
+  color:#000;
+}
+
+h5{
+    font-weight:700;
+    padding-left:1em;
+    font-size:1.3em;
+}
+
+#parentQuestion1 {
+    display:none;
+}
+
+button {
+    width: 150px;
+    height: 49px;
+    background-color: #16a216;
+    border: none;
+    color: #fff;
+    font-size: 1.3em;
+    outline:none;
+    cursor:pointer;
+}
+
+button:hover, button:focus, button:active {
+    background-color: #138413;
+}
+
+#logoContainer {
+    width:90%;
+    margin: 0 auto;
+    padding:3% 0;
+    align-items:center;
+}
+
+#logoContainer h1, #logoContainer h2 {
+    padding-left:50px;
+}
+
+.parentQuestions, .displayError, #termsQuestion {
+    display:none;
+}
+
+
+
+.parentQuestions p {
+    padding-left:2em;
+}
+
+.parentQuestions .column p {
+    padding-left:4em;
+}
+
+.displayInline {
+    display:inline;
+}
+
+#logo {
+    width:100px;
+    height: 115px;
+}
+
+.borderBox {
+    border: 1px solid #000;
+    margin-top: 20px;
+}
+
+.column span p {
+    font-size: 1.2em;
+    padding-left: 2em !important;
+}
+
+.goBackBtn, .nextBtn {
+   width: 70px;
+    background-color: #57dee4;
+    padding: 3px;
+    text-align: center;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.nextBtn {
+    float:right;
+    display:none;
+}
+
+.goBackBtn:hover, .goBackBtn:focus, .goBackBtn:active, .nextBtn:hover, .nextBtn:focus, .nextBtn:active {
+    color:#fff;
+}
+
+.displayError {
+    color: red;
+    padding: 0 !important;
+}
+
+#termsQuestion {
+    width:80%;
+    margin:0 auto;
+}
+
+#termsQuestion span {
+    display: block;
+    border: 1px solid #000;
+    margin: 10px;
+    margin: 1em auto;
+    padding: 5px;
+}
+
+#termsQuestion h2 {
+    padding: 0;
+    margin: 1em auto;
+}
+
+#termsQuestion p {
+    margin:0;
+}
+
+#termsQuestion input[type="radio"] {
+    margin: 10px;
+}
+
+.smallFont {
+    font-size: 0.8em;
+    margin: 0 0 10px !important;
+    text-align:right;
+}
+
+#aboutUs h2 {
+    text-align:center;
+}
+
+#continueBtn {
+    margin:1em;
+}
+
+.parentQuestions h2 {
+    padding: 0 10px;
+}
+
+#contactInformation {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#contactInformation h2 {
+    margin-bottom: 1em;
+    padding: 0;
+}
+
+.form-control {
+    max-width:initial;
+}
+
+/*.radio {
+  margin: 0.5rem;
+}
+.radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+.radio input[type="radio"] + .radio-label:before {
+  content: '';
+  background: #f4f4f4;
+  border-radius: 100%;
+  border: 1px solid #b4b4b4;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  position: relative;
+  top: -0.2em;
+  margin-right: 1em;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  transition: all 250ms ease;
+}
+.radio input[type="radio"]:checked + .radio-label:before {
+  background-color: #3197EE;
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+.radio input[type="radio"]:focus + .radio-label:before {
+  outline: none;
+  border-color: #3197EE;
+}
+.radio input[type="radio"]:disabled + .radio-label:before {
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+  border-color: #b4b4b4;
+  background: #b4b4b4;
+}
+.radio input[type="radio"] + .radio-label:empty:before {
+  margin-right: 0;
+}*/
+
+
+.radioBox {
+    background-color: #6c6f6f;
+    width: 3em;
+    height: 3em;
+    text-align: center;
+    line-height: 3em;
+    margin: 0 auto;
+}
+
+.parentQuestions .radioButtonsColumn p {
+    padding: 0 !important;
+}
+
+.radioButtonsColumn span {
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+}
+
+#termsQuestion .radioBox {
+    margin: 0 10px;
+    float: left;
+}
+
+#termsQuestion label{
+    line-height:3em;
+}
+
+#contactInformationStudent .flexDiv {
+    margin-top:2em;
+}
+
+#contactInformationStudent .column {
+    padding: 0 1em;
+}
+
+#contactInformationStudent h3 {
+    text-align: left;
+    margin: 1em 0;
+    font-size: 20px;
+}
+   
+#contactInformationStudent .smallFont {
+    padding-left:0 !important;
+    text-align:left;
+}
+
+.termsRow {
+    margin-bottom:0;
+}
+    
+#thankyouPageStudent h3, #thankyouPage h3{
+    text-align:left;
+}
