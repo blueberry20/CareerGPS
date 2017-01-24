@@ -1,8 +1,11 @@
 ﻿$(document).ready(function () {
+
     if (typeof document_ready !== 'undefined') {
         document_ready();
     }
 });
+
+
 
 function getCookie(c_name) {
     var i, x, y, ARRcookies = document.cookie.split(";");

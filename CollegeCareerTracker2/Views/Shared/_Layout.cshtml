@@ -2,11 +2,16 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>@ViewBag.Title - CollegeCareerTracker</title>
     @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" media="screen" runat="server" />*@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,700|Roboto+Slab:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round|Exo:400,700,900|Patua+One" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -19,22 +24,27 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("CollegeCareerTracker", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand" href="/"><span class="collegeFont">College</span><span class="careerFont">Career</span><span class="trackerFont">Tracker</span></a>
+                @*@Html.ActionLink("College<span class='difFont'>CareerTracker</span>", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("How it works", "Index", "Home")</li>
+                    <li><a id="howWorksLink" href="#">How it works</a></li>
+                    <li><a id="aboutLink" href="#">About us</a></li>
+                    @*<li>@Html.ActionLink("How it works", "Index", "Home")</li>
                     <li>@Html.ActionLink("About us", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact us", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Contact us", "Contact", "Home")</li>*@
                 </ul>
             </div>
         </div>
     </div>
     <div class="body-content">
         @RenderBody()
-        <hr />
+
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - CollegeCareerTracker.com. All rights reserved.</p>
+            <div class="divider"></div>
+            <p>Stay On Track for a Brighter Future</p>
         </footer>
     </div>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -43,5 +53,27 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <script>
+
+        $(document).ready(function () {
+            $(this).scrollTop(0);
+            resizePage();
+        });
+
+        function resizePage() {
+
+            $('section').css('min-height', $(window).height());
+
+            $(window).resize(function () {
+                if ($(window).width() > 768) {
+                    $('section').css('min-height', $(window).height());
+                }
+            });
+
+        }
+
+     </script>
+        
 </body>
 </html>
