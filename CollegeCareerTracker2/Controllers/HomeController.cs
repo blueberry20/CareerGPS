@@ -19,7 +19,6 @@ namespace CollegeCareerTracker2.Controllers
             return View();
         }
 
-        //string aptitude, string careerExploration, string careerroadmapdevelopment, string studentachievementarchive, string collegeselectionoptimizer, string collegeadmissionscheduler, string careerrewards, string habitbuilder, string firstName, string lastname, string phonenumber, string email, string numberofstudents, string studentgradesarray, string paymentpreference
 
         [HttpPost]
         public ActionResult getParentResponses(ParentEntry parentinfo)
@@ -84,11 +83,6 @@ namespace CollegeCareerTracker2.Controllers
             {
                 StudentClient tableStorage = new StudentClient();
                 tableStorage.Add(student);
-
-                //var allRecords = tableStorage.GetAll();
-
-
-
                 return Content("ok");
             }
             catch (Exception ex)
