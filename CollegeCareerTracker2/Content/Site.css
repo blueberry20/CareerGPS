@@ -901,6 +901,7 @@ ol.mainNumberList > li:before {
     #termsQuestion h2 {
         font-family: 'Source Sans Pro';
         font-weight: 300;
+        margin-top:5px;
     }
     #termsQuestion {
         width: 98%;
