@@ -1493,12 +1493,12 @@
                             }
                             break;
 
-                            //default:
-                            //    if (value == '' || value == null) {
-                            //        valid = false;
-                            //        alert('You must fill out this field');
-                            //    }
-                            //    break;
+                            default:
+                                if (value == '' || value == null) {
+                                    valid = false;
+                                   alert('You must fill out this field');
+                                }
+                                break;
                     }
                 });
 
@@ -1514,13 +1514,13 @@
                 $('#termsQuestion').show();
 
                 //on mobile recalculate window height
-                if ($(window).width() < 768) {
-                    //  $('.mainContainer').css({ 'height': $('#termsQuestion').height() + 50 })
-                    //  $('#frontPageOverlay').css('height', $('#termsQuestion').height() + 50);
-                    $('.mainContainer').css({ 'min-height': '100%' });
-                    $('#frontPageOverlay').css('min-height', '100%');
-                    $(footer).show();
-                }
+                //if ($(window).width() < 768) {
+                //    //  $('.mainContainer').css({ 'height': $('#termsQuestion').height() + 50 })
+                //    //  $('#frontPageOverlay').css('height', $('#termsQuestion').height() + 50);
+                //    $('.mainContainer').css({ 'min-height': '100%' });
+                //    $('#frontPageOverlay').css('min-height', '100%');
+                //    $(footer).show();
+                //}
             }
 
             //function validatePhone(phone) {

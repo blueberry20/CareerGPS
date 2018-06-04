@@ -35,16 +35,6 @@ textarea {
     font-family: 'Roboto', sans-serif;
 }
 
-.mainContainer {
-    background-repeat:no-repeat;
-    background-position:0 -20px;
-    background-image: url('images/background1.jpg');
-    background-size:cover;
-    min-height:100%;
-    padding: 2em 2em 0;
-    background-attachment:fixed;
-}
-
 .navbar-nav {
     float:right;
 }
@@ -53,13 +43,27 @@ textarea {
     padding:0;
 }
 
- #aboutUs {
-    background-color:#64cfda;
+/*===================================Main slide=====================================================*/
+
+.mainContainer {
+    background-repeat:no-repeat;
+    background-position:0 -20px;
+    background-image: url('images/nicole-harrington.jpg');
     background-size:cover;
     min-height:100%;
-    padding: 2em;
-   
+    padding: 2em 2em 0;
+    background-attachment:fixed;
 }
+
+#frontPageOverlay {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    min-height: 100%;
+    top: 50px;
+    background-color: rgba(129, 220, 212, 0.3);
+}
+
 
 #box {
   width: 80%;
@@ -100,16 +104,8 @@ h1, h2, h3, h4, h5 {
     font-family: 'Open Sans', sans-serif;
 }
 
-h1{
-    padding-left:50px;
-    color:#000;
-    font-size:3em;
-    font-family: 'Roboto Slab';
-}
 
 .difFont {
-    font-family:'Roboto';
-    font-family:'Source Sans Pro';
     font-family:'Open Sans';
     font-weight:700;
 }
@@ -117,23 +113,21 @@ h1{
 .navbar-brand {
     font-family:'open sans', sans-serif;
     font-family: 'Roboto Slab';
-}
-
-.collegeFont {
-    font-family: 'Patua One', cursive;
-}
-
-.careerFont {
-    font-family: 'Crete Round', serif;
-}
-
-.trackerFont {
-    font-family: 'Exo', sans-serif;
+     color:#fff !important;
 }
 
 
-#logoContainer h1, #logoContainer h2, .navbar-brand {
-    color: #c14f0a !important;
+#logoContainer h1, #logoContainer h2 {
+    color:#000 !important;
+}
+
+
+h1 {
+    padding-left:50px;
+    color:#000;
+    font-size:3em;
+    font-family: 'Roboto Slab';
+    font-size:5em;
 }
 
 h2{
@@ -141,14 +135,6 @@ h2{
     font-size:1.6em;
 }
 
-#frontPageOverlay {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    min-height: 100%;
-    top: 50px;
-    background-color: rgba(129, 220, 212, 0.6);
-}
 
 h3{
   width: 100%;
@@ -160,11 +146,9 @@ h3{
 }
 
 #parentStudentBox h4 {
-    color: #0499bd;
-    font-size: 1.7em;
-    font-family: 'Source Sans Pro';
+    color:#000;
+    font-size: 3em;
     font-family:'Shadows Into Light';
-    font-size:2em;
     font-weight: 500;
 }
 
@@ -174,6 +158,8 @@ h5{
     font-size:1.3em;
 }
 
+/*=======================================Questinnaire======================================================*/
+
 #parentQuestion1 {
     display:none;
 }
@@ -181,7 +167,7 @@ h5{
 .standardButton {
     width: 150px;
     height: 49px;
-    background-color: #16a216;
+    background-color: #000;
     border: none;
     color: #fff;
     font-size: 1.3em;
@@ -194,7 +180,9 @@ h5{
 }
 
 .standardButton:hover, .standardButton:focus, .standardButton:active {
-    background-color: #138413;
+    background-color:transparent;
+    border:1px solid #000;
+    color:#000;
 }
 
 #logoContainer {
@@ -212,8 +200,6 @@ h5{
 .parentQuestions, .displayError, #termsQuestion {
     display:none;
 }
-
-
 
 .parentQuestions p {
     padding-left:2em;
@@ -297,9 +283,6 @@ h5{
     text-align:right;
 }
 
-#aboutUs h2 {
-    text-align:center;
-}
 
 #continueBtn {
     margin:1em;
@@ -335,49 +318,8 @@ h5{
     width:50%;
 }
 
-/*.radio {
-  margin: 0.5rem;
-}
-.radio input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-}
-.radio input[type="radio"] + .radio-label:before {
-  content: '';
-  background: #f4f4f4;
-  border-radius: 100%;
-  border: 1px solid #b4b4b4;
-  display: inline-block;
-  width: 1.4em;
-  height: 1.4em;
-  position: relative;
-  top: -0.2em;
-  margin-right: 1em;
-  vertical-align: top;
-  cursor: pointer;
-  text-align: center;
-  transition: all 250ms ease;
-}
-.radio input[type="radio"]:checked + .radio-label:before {
-  background-color: #3197EE;
-  box-shadow: inset 0 0 0 4px #f4f4f4;
-}
-.radio input[type="radio"]:focus + .radio-label:before {
-  outline: none;
-  border-color: #3197EE;
-}
-.radio input[type="radio"]:disabled + .radio-label:before {
-  box-shadow: inset 0 0 0 4px #f4f4f4;
-  border-color: #b4b4b4;
-  background: #b4b4b4;
-}
-.radio input[type="radio"] + .radio-label:empty:before {
-  margin-right: 0;
-}*/
-
-
 .radioBox {
-    background-color: #6c6f6f;
+    background-color: #000;
     width: 3em;
     height: 3em;
     text-align: center;
@@ -427,11 +369,6 @@ h5{
 .termsRow {
     margin-bottom:0;
 }
-    
-#thankyouPageStudent h3, #thankyouPage h3{
-    text-align:left;
-}
-
 
 .questionProgress {
     background-color: rgb(239, 172, 23);
@@ -447,6 +384,10 @@ h5{
     color: #64cfda;
 }
 
+#aboutUs h2 {
+    text-align:center;
+}
+
 
 footer p {
     text-align: center;
@@ -454,6 +395,8 @@ footer p {
     padding: 0.5em;
 }
 
+
+/*=========================How it works slide=========================================*/
 #howItWorksWrapper {
     width:80%;
     margin: 0 auto;
@@ -462,7 +405,7 @@ footer p {
 #howItWorksWrapper h3 {
     margin-bottom:1em;
     font-family:"Shadows Into Light";
-    font-size:2.5em;
+    font-size:4em;
 }
 
 #howItWorksWrapper p {
@@ -472,11 +415,11 @@ footer p {
 }
 
 .parentColumn h4, .parentColumn h3 {
-    color: #2c95f3;
+    color: #000;
 }
 
 .studentColumn h4, .studentColumn h3, .studentColor {
-    color: #14d23e !important;
+    color: #000 !important;
 }
 
 #howItWorksWrapper .column {
@@ -488,7 +431,7 @@ footer p {
 }
 
 #aboutUs {
-    background-image: url(/Content/images/road.jpg);
+    background-image: url(/Content/images/ryan-vitter.jpg);
     background-repeat:no-repeat;
     background-position:0 -20px;
     background-size:cover;
@@ -496,6 +439,7 @@ footer p {
     padding: 2em 2em 0;
     background-attachment:fixed;
 }
+
 
 #aboutUs .container {
     color: #000;
@@ -514,6 +458,13 @@ footer p {
 }
 
 
+/*=============================Thank you page=========================================*/
+
+    
+#thankyouPageStudent h3, #thankyouPage h3{
+    text-align:left;
+}
+
 #thankyouPageStudent p, #thankyouPage p, #thankyouPageStudent h2, #thankyouPage h2 {
     padding-left:0;
 }
@@ -528,7 +479,6 @@ footer p {
     font-size: 1.3em;
 }
 
-
 .divider{
     width:100px;
     height:1px;
@@ -539,7 +489,7 @@ footer p {
 
 
 
-/*privacy policy */
+/*===================================privacy policy=================================== */
 .privacy h2 {
     text-align:center;
 }
@@ -631,51 +581,12 @@ ol.mainNumberList > li:before {
     margin-left:-20px;
 }
 
-@media only screen and (max-width:768px) {
-    .aboutContainer {
-        font-size:12px;
-    }
 
-    .aboutContainer .container {
-        padding: 15px;
-        font-size:18px;
-    }
+/*===================================Media queries========================================*/
 
-   .aboutContainer h2 {
-        font-size:24px;
-    }
-
-    .aboutContainer h3 {
-        font-size: 16px;
-        margin: 10px;
-    }
-
-   .aboutContainer h4 {
-        font-size:22px;
-    }
-
-     ol {
-        padding-left:20px !important;
-    }
-
-}
-
-@media only screen and (max-width:650px) {
-
-    .lowerAlpha {
-        padding-top:15px;
-    }
-
-    .aboutContainer h4 {
-        margin-left:4px;
-        font-size:20px;
-    }
-
-    ol.mainNumberList > li:before  {
-        height:30px;
-        width:30px;
-        line-height:30px;
-        font-size:24px;
+@media only screen and (max-width:1150px) {
+    h1 {
+        font-size:4em;
     }
 }
 
@@ -703,15 +614,18 @@ ol.mainNumberList > li:before {
     .radioButtonsColumn {
         width: 60%;
     }
-}
 
+    #parentStudentBox h4 {
+        font-size:2.5em;
+    }
+}
 
 @media only screen and (max-width:850px){
     #parentStudentBox p {
         margin: 1em 1em 1em;
     }
     h1 {
-       font-size: 2.5em;
+       font-size:3em;
     }
     h2 {
         font-size: 1.4em;
@@ -728,7 +642,36 @@ ol.mainNumberList > li:before {
     }
 }
 
+
 @media only screen and (max-width:768px) {
+    h1 {
+        font-size:2em;
+    }
+    .aboutContainer {
+        font-size:12px;
+    }
+
+    .aboutContainer .container {
+        padding: 15px;
+        font-size:18px;
+    }
+
+   .aboutContainer h2 {
+        font-size:24px;
+    }
+
+    .aboutContainer h3 {
+        font-size: 16px;
+        margin: 10px;
+    }
+
+   .aboutContainer h4 {
+        font-size:22px;
+    }
+
+     ol {
+        padding-left:20px !important;
+    }
     #logoContainer {
         margin:5% auto;
         width:100%;
@@ -789,6 +732,26 @@ ol.mainNumberList > li:before {
     }
 }
 
+@media only screen and (max-width:650px) {
+
+    .lowerAlpha {
+        padding-top:15px;
+    }
+
+    .aboutContainer h4 {
+        margin-left:4px;
+        font-size:20px;
+    }
+
+    ol.mainNumberList > li:before  {
+        height:30px;
+        width:30px;
+        line-height:30px;
+        font-size:24px;
+    }
+}
+
+
 @media only screen and (max-width:414px) {
     #logo {
         width: 70px;
@@ -825,6 +788,7 @@ ol.mainNumberList > li:before {
     }
 
     #parentStudentBox h4 {
+        font-size:2em;
         margin: 0.5em 0.5em 0;
     }
     #parentStudentBox p {
