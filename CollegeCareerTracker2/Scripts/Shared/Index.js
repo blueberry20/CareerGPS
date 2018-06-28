@@ -2,151 +2,132 @@
 
 
 
-        $(document).ready(function () {
-            var windowHeight = $(window).height();
-            var selectedPaymentOption = "";
-            var studentGradesArray = [];
+$(document).ready(function () {
+    var windowHeight = $(window).height();
+    var selectedPaymentOption = "";
+    var selectedPaymentElement = "";
+    var studentGradesArray = [];
 
 
-            $('#signUpLink').click(function () {
-                $('html, body').animate({ scrollTop: $('#parentStudentBox').offset().top }, 'slow');
-            });
+    $('#signUpLink').click(function () {
+        $('html, body').animate({ scrollTop: $('#parentStudentBox').offset().top }, 'slow');
+    });
 
-            //on phone open number screen for entering phone number
-            $('input[type="tel"]').on('touchstart', function () {
-                $(this).attr('type', 'number');
-            });
+    //on phone open number screen for entering phone number
+    $('input[type="tel"]').on('touchstart', function () {
+        $(this).attr('type', 'number');
+    });
 
-            $('input[type="text"]').on('keydown blur', function () {
-                $(this).attr('type', 'text');
-            });
+    $('input[type="text"]').on('keydown blur', function () {
+        $(this).attr('type', 'text');
+    });
 
-            function hideLogo() {
-                $("#logoContainer").hide();
+    function hideLogo() {
+        $("#logoContainer").hide();
+    }
+
+    function showLogo() {
+        $("#logoContainer").show();
+    }
+
+
+    $('#parentStartBtn').click(function () {
+        hideLogo();
+        $('#parentContactInformation').slideDown();
+        $('#parentStudentBox').slideUp();
+        $('.navbar-nav').hide();
+        $('.navbar-toggle').hide();
+        if ($(window).width() < 768) {
+            $('#logoContainer').hide();
+            $('#aboutUs').hide();
+            $('#howWorks').hide();
+        }
+        else {
+            $('#aboutUs').hide();
+            $('#howWorks').hide();
+        }
+    });
+
+
+    $('#studentStartBtn').click(function () {
+        $('#studentContactInformation1').slideDown();
+        $('#parentStudentBox').slideUp();
+        $('.navbar-nav').hide();
+        $('.navbar-toggle').hide();
+
+        if ($(window).width() < 768) {
+            $('#logoContainer').hide();
+            $('#aboutUs').hide();
+            $('#howWorks').hide();
+        }
+        else {
+            $('#aboutUs').hide();
+            $('#howWorks').hide();
+        }
+    });
+
+
+    $('.goBackBtn').click(function () {
+        var currentSlide = $(this).closest('.parentQuestions');
+        $(currentSlide).slideUp();
+        $(currentSlide).prev().slideDown();
+        $(currentSlide).prev().find('.nextBtn').show();
+    });
+
+
+
+    //continue Btn after parent fills out contact info
+    $('#parentContactContinueBtn').click(function () {
+        validateAnswers();
+    });
+
+    $("#numberofstudents").change(function () {
+        var numberOfTimes = parseInt($('#numberofstudents').val(), 10) + 1;
+        $('#childrenGradesDiv').empty();
+        for (var i = 1; i < numberOfTimes; i++) {
+            $('#childrenGradesDiv').append('<div class="form-group row"><label class ="shortLabel col-lg-4 col-md-4 col-sm-4 col-xs-12 required" for="childGrade'+i+'">Child '+ i+ ' Grade Level</label> <div  class="shortField col-lg-8 col-md-8 col-sm-8 col-xs-12"><select class="form-control required" id="childGrade'+i +'" name="childgrade" value="">' +
+             '<option disabled selected value>Select</option>' +
+             '<option value="freshman">Freshman</option>' +
+             '<option value="sophomore">Sophomore</option>' +
+             '<option value="junior">Junior</option>' +
+             '<option value="senior">Senior</option>' +
+             '<option value="other">Other</option>' +
+         '</select>' +
+         '<p class="displayError">Please fill out child\'s grade</p></div></div>' +
+              '');
+        }
+        if ($(window).width() < 768) {
+            $('.mainContainer').css('min-height', $('#parentContactInformation').height() + 50);
+            $('#frontPageOverlay').css('min-height', $('#parentContactInformation').height() + 50);
+        }
+    });
+
+    //on select payment option, save value in a global variable
+    $('.optionsWrapper').click(function () {
+        $('.optionsWrapper').css({ "background-color": "#fff" });
+        selectedPaymentOption = $(this).attr("name");
+        $(this).css({ "background-color": "#0da697" });
+    });
+
+    
+    //select payment. on hover change background color but keep selected background color
+    $('.optionsWrapper').hover(function () {
+        if ($(this).attr("name") !== selectedPaymentOption) {
+            $(this).css({ "background-color": "#0da697" });
+        }
+    },
+        function () {
+            if ($(this).attr("name") !== selectedPaymentOption) {
+                $(this).css({ "background-color": "#fff" });
             }
-
-            function showLogo() {
-                $("#logoContainer").show();
-            }
-
-
-            $('#parentStartBtn').click(function () {
-                hideLogo();
-                $('#parentContactInformation').slideDown();
-                $('#parentStudentBox').slideUp();
-                $('.navbar-nav').hide();
-                $('.navbar-toggle').hide();
-                if ($(window).width() < 768) {
-                    $('#logoContainer').hide();
-                    $('#aboutUs').hide();
-                    $('#howWorks').hide();
-                }
-                else {
-                    $('#aboutUs').hide();
-                    $('#howWorks').hide();
-                }
-            });
-
-
-            $('#studentStartBtn').click(function () {
-                $('#studentContactInformation1').slideDown();
-                $('#parentStudentBox').slideUp();
-                $('.navbar-nav').hide();
-                $('.navbar-toggle').hide();
-
-                if ($(window).width() < 768) {
-                    $('#logoContainer').hide();
-                    $('#aboutUs').hide();
-                    $('#howWorks').hide();
-                }
-                else {
-                    $('#aboutUs').hide();
-                    $('#howWorks').hide();
-                }
-            });
-
-
-            $('.goBackBtn').click(function () {
-                var currentSlide = $(this).closest('.parentQuestions');
-                $(currentSlide).slideUp();
-                $(currentSlide).prev().slideDown();
-                $(currentSlide).prev().find('.nextBtn').show();
-            });
-
-            //$('.continueBtn').click(function () {
-            //    var currentSlide = $(this).closest('.parentQuestions');
-            //    $(currentSlide).slideUp();
-            //    $(currentSlide).next().slideDown();
-            //});
+        });
 
 
 
 
-            //when user clicks on radio button, move to next slide
-            //$('.parentQuestions input[type="radio"]').on('click change', function (e) {
-            //    var currentSlide = $(this).closest('.parentQuestions');
-            //    var nextSlide = $(currentSlide).next();
-            //    $(currentSlide).slideUp();
-            //    $(nextSlide).slideDown('slow', function () {
-            //        $(document).scrollTop(0);
-            //        //on mobile recalculate window height
-            //        if ($(window).width() < 768) {
-            //            $('#frontPageOverlay').css({ 'min-height': $(nextSlide).height() + 50 });
-            //            $('.mainContainer').css({ 'min-height': $(nextSlide).height() + 50 });
-             
-            //            if ($(nextSlide).attr('id') == "parentContactInformation" || $(nextSlide).attr('id') == "studentContactInformation1" || $(nextSlide).attr('id') == "studentContactInformation2") {
-            //                $('.mainContainer').css({ 'background-image': 'none' });
-            //                $('footer').hide();
-            //            }
-            //            else {
-            //                $('.mainContainer').css({ 'background-image': '/Content/images/background1.jpg' });
-            //                $('footer').show();
-            //            }
 
-            //        }
-            //        else { //desktop
-            //            if ($(nextSlide).attr('id') == "parentContactInformation" || $(nextSlide).attr('id') == "studentContactInformation1" || $(nextSlide).attr('id') == "studentContactInformation2") {
-            //                $('footer').hide();
-            //            }
-            //        }
-            //    });         
-            //});
-
-            //continue Btn after parent fills out contact info
-            $('#parentContactContinueBtn').click(function () {
-                validateAnswers();
-            });
-
-            $("#numberofstudents").change(function () {
-                var numberOfTimes = parseInt($('#numberofstudents').val(), 10) + 1;
-                $('#childrenGradesDiv').empty();
-                for (var i = 1; i < numberOfTimes; i++) {
-                    $('#childrenGradesDiv').append('<div class="form-group row"><label class ="shortLabel col-lg-4 col-md-4 col-sm-4 col-xs-12 required" for="childGrade'+i+'">Child '+ i+ ' Grade Level</label> <div  class="shortField col-lg-8 col-md-8 col-sm-8 col-xs-12"><select class="form-control required" id="childGrade'+i +'" name="childgrade" value="">' +
-                     '<option disabled selected value>Select</option>' +
-                     '<option value="freshman">Freshman</option>' +
-                     '<option value="sophomore">Sophomore</option>' +
-                     '<option value="junior">Junior</option>' +
-                     '<option value="senior">Senior</option>' +
-                     '<option value="other">Other</option>' +
-                 '</select>' +
-                 '<p class="displayError">Please fill out child\'s grade</p></div></div>' +
-                      '');
-                }
-                if ($(window).width() < 768) {
-                    $('.mainContainer').css('min-height', $('#parentContactInformation').height() + 50);
-                    $('#frontPageOverlay').css('min-height', $('#parentContactInformation').height() + 50);
-                }
-            });
-
-
-            $('.optionsWrapper').click(function () {
-                selectedPaymentOption = $(this).attr("name");
-                $(this).css({ "background-color": "#0da697" });
-            })
-
-            $('#submitParentBtn').click(function () {
-                console.log(selectedPaymentOption)
-                //check if the last question is answered and submit
+  //check if the last question is answered and submit
+            $('#submitParentBtn').click(function () {          
                 if (selectedPaymentOption == "") {
                     $('#paymentError').show();
                 }
@@ -165,12 +146,11 @@
                     studentGradesArray.push($('#childGrade' + i).val());
                 }
 
-                $('.requireddd').each(function (index, element) {
+                $('.required').each(function (index, element) {
                     var name = $(element).attr('name');
                     var value = $(element).val();
                     switch (name) {
-                        case 'email':
-                           
+                        case 'email':                        
                             if (!validateEmail(value)) {
                                 valid = false;
                                 //errorList.push('email');
@@ -241,8 +221,6 @@
                             }
                             break;
 
-                            console.log(valid);
-
                             //default:
                             //    if (value == '' || value == null) {
                             //        valid = false;                              
@@ -260,8 +238,8 @@
                 }
 
                 $(document).scrollTop(0);
-                $('#parentContactInformation').hide();
-                $('#termsQuestion').show();
+                $('#parentContactInformation').slideUp();
+                $('#termsQuestion').slideDown();
 
                 //on mobile recalculate window height
                 //if ($(window).width() < 768) {
@@ -292,15 +270,16 @@
                     return raw_number.replace(regex1, '$1$2$3');
                 }
             }
+
+
             function validateEmail(email) {
                 if (email) {
-                    var reg = /^(([^<>()[\]\\.,;:\s@@\"]+(\.[^<>()[\]\\.,;:\s@@\"]+)*)|(\".+\"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                    if (reg.test(email)) {
-                        //return emailExist(email);
+                    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    if (re.test(String(email).toLowerCase())) {
                         return true;
                     }
-                }
-                return false;
+                    return false;
+                }          
             }
 
 
@@ -450,8 +429,8 @@
                 }
                 //submitStudentAnswers();
                 $(document).scrollTop(0);
-                $('#studentContactInformation1').hide();
-                $('#studentContactInformation2').show();
+                $('#studentContactInformation1').slideUp();
+                $('#studentContactInformation2').slideDown();
 
                 //on mobile recalculate window height
                 if ($(window).width() < 768) {

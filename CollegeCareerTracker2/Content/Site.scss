@@ -412,11 +412,6 @@ section .divider {
     
     &:hover {
         background-color:$darkBlue;
-
-        h3:first-child {
-            background-color:#fff;
-            color: $darkBlue;
-        }
     }
 
 }
@@ -458,9 +453,9 @@ section .divider {
 }
 
 
-  .displayError, #termsQuestion {
-     display:none;
-    }
+.displayError, #termsQuestion {
+    display:none;
+}
 
 .formContainer {
     width:80%;
@@ -653,7 +648,7 @@ footer p {
     width:100px;
     height:1px;
     margin:0.5em auto;
-    background-color: #c14f0a;
+    background-color: $darkBlue;
 }
 
 
