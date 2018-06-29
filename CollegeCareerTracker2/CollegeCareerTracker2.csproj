@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -219,9 +220,10 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <None Include="Properties\PublishProfiles\CareerGPS.pubxml" />
+    <None Include="Properties\PublishProfiles\CareerGPS220180628044520 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CollegeCareerTracker - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\CollegeCareerTracker - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\CollegeCareerTracker.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
