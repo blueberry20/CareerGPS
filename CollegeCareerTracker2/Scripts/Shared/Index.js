@@ -6,7 +6,8 @@ $(document).ready(function () {
     var studentGradesArray = [];
 
 
-    $('#signUpLink').click(function () {
+    $('.learnMoreButton').click(function () {
+        console.log('ff');
         $('html, body').animate({ scrollTop: $('#parentStudentBox').offset().top }, 'slow');
     });
 
@@ -26,24 +27,15 @@ $(document).ready(function () {
         $(currentSlide).prev().find('.nextBtn').show();
     });
 
+    $(".backHomeBtn").click(function () {
+        window.location.replace("../Home/Index");
+    });
+
 
 
     /*============================Parent flow=========================================*/
     $('#parentStartBtn').click(function () {
-        hideLogo();
-        $('#parentContactInformation').slideDown();
-        $('#parentStudentBox').slideUp();
-        $('.navbar-nav').hide();
-        $('.navbar-toggle').hide();
-        if ($(window).width() < 768) {
-            $('#logoContainer').hide();
-            $('#aboutUs').hide();
-            $('#howWorks').hide();
-        }
-        else {
-            $('#aboutUs').hide();
-            $('#howWorks').hide();
-        }
+        window.location.replace("../Home/Parent");
     });
 
     //continue Btn after parent fills out contact info
@@ -243,34 +235,26 @@ $(document).ready(function () {
             }
         }).success(function (response) {
             console.log('success');   
-            $('#termsQuestion').hide();
             $('#thankyouPage').show();
-            $(document).scrollTop(0);
-            $('.navbar-nav').show();
-            showLogo();
                    
-            if ($(window).width() < 768) {
-                $('.navbar-toggle').show();
-                $('.mainContainer').css({ 'min-height': $('#thankyouPage').height() + 50 });
-                $('#frontPageOverlay').css('min-height', $('#thankyouPage').height() + 50);
-                $('#frontPageOverlay').css('height', $('#thankyouPage').height() + 66);
-            }
+            //if ($(window).width() < 768) {
+            //    $('.navbar-toggle').show();
+            //    $('.mainContainer').css({ 'min-height': $('#thankyouPage').height() + 50 });
+            //    $('#frontPageOverlay').css('min-height', $('#thankyouPage').height() + 50);
+            //    $('#frontPageOverlay').css('height', $('#thankyouPage').height() + 66);
+            //}
         }).error(function (response) {
             console.log('error');
             console.log(response);
             //remove when ajax returns success
-            $('#termsQuestion').hide();
             $('#thankyouPage').show();
-            $(document).scrollTop(0);
-            $('.navbar-nav').show();
-            showLogo();
                    
-            if ($(window).width() < 768) {
-                $('.navbar-toggle').show();
-                $('.mainContainer').css({ 'min-height': $('#thankyouPage').height() + 50 });
-                $('#frontPageOverlay').css('min-height', $('#thankyouPage').height() + 50);
-                $('#frontPageOverlay').css('height', $('#thankyouPage').height() + 66);
-            }
+            //if ($(window).width() < 768) {
+            //    $('.navbar-toggle').show();
+            //    $('.mainContainer').css({ 'min-height': $('#thankyouPage').height() + 50 });
+            //    $('#frontPageOverlay').css('min-height', $('#thankyouPage').height() + 50);
+            //    $('#frontPageOverlay').css('height', $('#thankyouPage').height() + 66);
+            //}
 
         });
     }
@@ -279,20 +263,7 @@ $(document).ready(function () {
     /*===============================Student flow=============================================*/
 
     $('#studentStartBtn').click(function () {
-        $('#studentContactInformation1').slideDown();
-        $('#parentStudentBox').slideUp();
-        $('.navbar-nav').hide();
-        $('.navbar-toggle').hide();
-
-        if ($(window).width() < 768) {
-            $('#logoContainer').hide();
-            $('#aboutUs').hide();
-            $('#howWorks').hide();
-        }
-        else {
-            $('#aboutUs').hide();
-            $('#howWorks').hide();
-        }
+        window.location.replace("../Home/Student");
     });
 
 
@@ -482,8 +453,6 @@ $(document).ready(function () {
             console.log('success');
             $('#studentContactInformation2').hide();
             $('#thankyouPageStudent').show();
-            $(document).scrollTop(0);
-            $('.navbar-nav').show();
 
             if ($(window).width() < 768) {
                 $('.navbar-toggle').show();
@@ -497,19 +466,7 @@ $(document).ready(function () {
             //remove code below when ajax returns success
             $('#studentContactInformation2').hide();
             $('#thankyouPageStudent').show();
-            $('#aboutUs').show();
-            $('#howWorks').show();
-            $(document).scrollTop(0);
-            $('.navbar-nav').show();
-
-            //comment this after backend is fixed
-            $('.navbar-toggle').show();
-            $('.mainContainer').css({ 'min-height': $('#thankyouPageStudent').height() + 50 });
-            $('#frontPageOverlay').css('min-height', $('#thankyouPageStudent').height() + 50);
-            $('#frontPageOverlay').css('height', $('#thankyouPageStudent').height() + 66);
-            ///////////////////////////////////////////
-                   
-
+                  
             if ($(window).width() < 768) {
                 $('.navbar-toggle').show();
                 $('.mainContainer').css({ 'min-height': $('#thankyouPageStudent').height() + 50 });

@@ -1,6 +1,9 @@
 ﻿
-$blue: aquamarine;
-$darkBlue: #0da697;
+$blue: #16d9e3;
+$darkBlue: #12c0eb;
+$coral: #ef4949;
+$blueGradient: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+$lightBlueGradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 
 body {
     padding-top: 50px;
@@ -14,8 +17,9 @@ html {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    background-color:$blue;
+    background-image: $blueGradient;
+    padding:0;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -43,9 +47,30 @@ section .container {
     float:right;
 }
 
-.body-content {
-    padding:0;
+.body-content .container {
+    background-color:#fff;
+    width:100%;
+    padding: 2em auto;
 }
+
+.flex1 {
+    flex:1;
+}
+
+.flexColumn {
+    display:flex;
+    flex-direction:column;
+    min-height:100%;
+}
+
+.img-responsive {
+    margin:0 auto;
+}
+
+.col-100 {
+    width:100%;
+}
+
 
 /*===================================Main slide=====================================================*/
 
@@ -125,6 +150,14 @@ h1, h2, h3, h4, h5 {
     color:#000 !important;
 }
 
+#logoContainer {
+    h2 {
+        font-family: "Roboto";
+        font-size:2em;
+        font-weight:600;
+    }
+}
+
 
 h1 {
     padding-left:50px;
@@ -133,10 +166,15 @@ h1 {
     font-size:5em;
 }
 
-h2{
-    color:#000;
-    font-size:2em;
-    text-align:center;
+h2 {
+    color: #000;
+    font-size: 2em;
+    text-align: center;
+    margin: 1em auto;
+    width: 100%;
+    font-family: "Shadows Into Light";
+    font-size: 3em;
+    font-weight: 300;
 }
 
 
@@ -172,6 +210,7 @@ h5{
     outline:none;
     cursor:pointer;
     transition:all 0.5s;
+    margin:2em auto;
 }
 
 
@@ -191,16 +230,13 @@ h5{
 
 
 /*================Stat section 1============================*/
-.container h2 {
-    text-align:center;
-    margin:1em auto;
-    width:100%;
-    font-family:"Shadows Into Light";
-    font-size:3em;
-    font-weight:300;
+
+#statsSection {
+    display:flex;
+    align-items:center;
 }
 
-.flexDiv .column {
+ .column {
     padding:2em;
 }
 
@@ -221,73 +257,110 @@ section .divider {
 
 .snippet {
     background-color: $blue;
-    padding:1em;
-    margin:1em;
-    min-height:190px;
-    font-family:"Source Sans Pro", sans-serif;
-    text-align:center;
-    font-size:1.2em;
+    background-image: $blueGradient;
+    padding: 1em;
+    margin: 1em;
+    min-height: 190px;
+    font-family: "Source Sans Pro", sans-serif;
+    text-align: center;
+    font-size: 1.2em;
 }
 
-.container .standardButton {
-    margin:2em auto;
-}
 
 /*==================Stat section 2=============================*/
 #statsSection2 {
-    background-repeat:no-repeat;
-    background-position:0 -20px;
-    background-image: url('images/trees.jpg');
-    background-size:cover;
-    min-height:100%;
+    background-repeat: no-repeat;
+    background-position: 0 -20px;
+    background-image: url('images/1.jpg');
+    background-size: cover;
+    min-height: 100%;
     padding: 2em 2em 0;
-    background-attachment:fixed;
-    padding:0;
+    background-attachment: fixed;
+    padding: 0;
+    text-align: center;
+    display:flex;
+    align-items:center;
+
+    .overlay {
+        padding: 3em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin-bottom:20px;
+    }
+
+    h3 {
+        font-family: "Karla", sans-serif;
+        color: $coral;
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 18px;
+        padding-bottom: 10px;
+        line-height: 30px;
+    }
+
+    .standardButton {
+        margin-top: 1em;
+    }
+
+    .col-3 {
+        width: 28%;
+        margin: 1%;
+        padding: 1em;
+        font-size: 2em;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        color: #000;
+        background-color: lightpink;
+        background-image: $lightBlueGradient;
+    }
 }
 
-#statsSection2 .overlay {
-    padding:3em;
-}
 
-.col-3 {
-    width: 28%;
-    margin:1%;
-    padding:1em;
-    font-size:2em;
-    font-family:'Open Sans', sans-serif;
-    font-weight:300;
-    color:#000;
-    background-color:#fff;
-}
 
-#statsSection2 .standardButton {
-    margin-top:1em;
-}
+
 
 /*==================Screenshots section=============================*/
 
-#screenshotsSection .col-4 {
-    width:22.5%;
-    margin:1%;
+#screenshotsSection {
+    padding:3em;
+
+    .col-4 {
+        width:22.5%;
+        margin:1%;
+    }
 }
 
 #careerPathSection {
-    background-color: #fff;
+    background-color: $blue;
+    background-image: $lightBlueGradient;
     text-align: center;
+    padding:3em;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+
+    .imageWrapper {
+        padding:2em;
+        background-color: #fff;
+        width:70%;
+        margin:0 auto;
+    }
 }
 
-#careerPathSection .container {
-    padding:2em;
-}
 
-#screenshotsSection {
-    background-color:aquamarine;
-}
 
-/*=======================================Questinnaire======================================================*/
 
-#parentQuestion1 {
-    display:none;
+/*=======================================Questionnaire======================================================*/
+
+.questionnairePage {
+    padding:1em;
+    h2 {
+        margin:20px auto;
+    }
 }
 
 #studentStartBtn {
@@ -388,19 +461,27 @@ section .divider {
      }
 }
 
+#parentContactInformation {
+    display:block;
+}
+
+#studentContactInformation1 {
+    display:block;
+}
+
 
 #termsQuestion {
-    width:100%;
-    margin:0 auto;
+    width: 100%;
+    margin: 0 auto;
 
     h2 {
-        padding:0;
+        padding: 0;
         margin: 20px auto 10px;
     }
-    padding {
-        margin:0;
-    }
 
+    padding {
+        margin: 0;
+    }
 }
 
 
@@ -549,12 +630,19 @@ section .divider {
     margin:1em 0;
 }
 
+footer {
+    background-color: #000;
+    color: #fff;
 
-footer p {
-    text-align: center;
-    margin: 0;
-    padding: 0.5em;
+    p {
+        text-align: center;
+        margin: 0;
+        padding: 0.5em;
+        background-color: #000;
+        color: #fff;
+    }
 }
+
 /*=========================Slide 2=========================================*/
 
 /*=========================How it works slide=========================================*/
@@ -625,21 +713,28 @@ footer p {
 
 
 .thankyouPage {
-    width:70%;
+    width: 70%;
     margin: 2em auto;
-     p {
+
+    p {
         font-family: 'Roboto';
         font-size: 1.3em;
-        padding-left:0;
+        padding-left: 0;
     }
 
-     h2 {
-         padding-left:0;
-     }
+    h2 {
+        padding-left: 0;
+    }
 
-     h3 {
-         text-align:left;
-     }
+    h3 {
+        text-align: left;
+    }
+
+    .standardButton {
+        width: auto;
+        font-size: 14px;
+        padding: 10px;
+    }
 }
 
 
@@ -648,7 +743,7 @@ footer p {
     width:100px;
     height:1px;
     margin:0.5em auto;
-    background-color: $darkBlue;
+    background-color: $blue;
 }
 
 
@@ -748,9 +843,26 @@ ol.mainNumberList > li:before {
 
 /*===================================Media queries========================================*/
 
+@media (min-width: 768px){
+    .container {
+        max-width: 90%;
+    }
+}
+
 @media only screen and (max-width:1150px) {
     h1 {
         font-size:4em;
+    }
+
+    #statsSection2 {
+        .col-3 {
+            font-size:25px;
+        }
+    }
+
+    .column {
+        width:50%;
+        padding:1em;
     }
 }
 
@@ -764,24 +876,43 @@ ol.mainNumberList > li:before {
         margin: 1% auto 0;
     }
 
-    #aboutUs .container {
-        font-size:1em;
-    }
-    #howItWorksWrapper p {
-        font-size: 1.1em;
+    section {
+        .container {
+            padding:2em;
+        }
+
+        p {
+            font-size:18px;
+        }
+        
+    }    
+    
+    #statsSection2 {
+        h2 {
+            font-size:1.3em;
+        }
+        p {
+            font-size:18px;
+        }
+        .overlay {
+            padding:2em;
+        }
     }
 
-    .column {
-        width:40%;
+    #careerPathSection {
+        padding:2em;
     }
 
-    .radioButtonsColumn {
-        width: 60%;
+    #screenshotsSection {
+        padding:2em;
     }
 
     #parentStudentBox h4 {
         font-size:2.5em;
     }
+
+
+
 }
 
 @media only screen and (max-width:850px){
@@ -791,9 +922,7 @@ ol.mainNumberList > li:before {
     h1 {
        font-size:3em;
     }
-    h2 {
-        font-size: 1.4em;
-    }
+
     #box {
         width: 95%;
     }
@@ -808,8 +937,19 @@ ol.mainNumberList > li:before {
 
 
 @media only screen and (max-width:768px) {
+    .sm-100 {
+        width:100% !important;
+    }
+
+    .sm-50 {
+        width:48% !important;
+    }
+
     h1 {
         font-size:2em;
+    }
+    h2 {
+        font-size:2.5em;
     }
     .aboutContainer {
         font-size:12px;
@@ -836,6 +976,7 @@ ol.mainNumberList > li:before {
      ol {
         padding-left:20px !important;
     }
+
     #logoContainer {
         margin:5% auto;
         width:100%;
@@ -843,8 +984,9 @@ ol.mainNumberList > li:before {
     }
 
     .column {
-        width: 100%;
-        margin-bottom:4%;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        padding-top: 0;
     }
 
     .mainContainer {
@@ -864,6 +1006,10 @@ ol.mainNumberList > li:before {
 
      #box {
         margin: 10% auto 0;
+     }
+
+     #statsSection2 .col-3 {
+        font-size: 20px;
      }
      h5 {
          text-align:center;
@@ -894,6 +1040,10 @@ ol.mainNumberList > li:before {
      #contactInformationStudent2 h3 {
         font-size: 1.4em;
     }
+
+    section .container {
+        padding:1em;
+    }
 }
 
 @media only screen and (max-width:650px) {
@@ -913,6 +1063,48 @@ ol.mainNumberList > li:before {
         line-height:30px;
         font-size:24px;
     }
+
+    #parentStudentBox .column {
+        text-align: center;
+        width: 100%;
+    }
+
+    section {
+        .container {
+            padding: 2em;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+    #statsSection {
+        .flexDiv {
+            flex-direction: column;
+        }
+
+        .snippet {
+            margin: 0 0 1em;
+        }
+    }
+    #statsSection2 {
+        .overlay {
+            padding: 1em;
+        }
+    }
+
+    #careerPathSection {
+        padding: 1em;
+
+        .imageWrapper {
+            width: 100%;
+        }
+    }
+
+    #screenshotsSection {
+        padding: 1em;
+    }
+
 }
 
 

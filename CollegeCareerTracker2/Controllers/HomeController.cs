@@ -91,6 +91,18 @@ namespace CollegeCareerTracker2.Controllers
             }
         }
 
+        public ActionResult Parent()
+        {
+            ViewBag.Message = "Parent";
+            return View();
+        }
+
+        public ActionResult Student()
+        {
+            ViewBag.Message = "Student";
+            return View();
+        }
+
 
         public ActionResult PrivacyPolicy()
         {

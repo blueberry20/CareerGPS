@@ -154,6 +154,7 @@
     <Compile Include="CloudStorage\Student\StudentClient.cs" />
     <Compile Include="CloudStorage\TableStorageClient.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ParentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -167,6 +168,9 @@
     <Content Include="Content\emails\ParentEmail.html" />
     <Content Include="Content\emails\Parent_InitiatedByStudent.html" />
     <Content Include="Content\emails\StudentEmail.html" />
+    <Content Include="Content\images\1.jpg" />
+    <Content Include="Content\images\2.jpg" />
+    <Content Include="Content\images\4.jpg" />
     <Content Include="Content\images\cctlogo.png" />
     <Content Include="Content\images\cctlogo2.png" />
     <Content Include="Content\images\Fav\android-icon-144x144.png" />
@@ -253,6 +257,9 @@
     <Content Include="Views\Home\PrivacyPolicy1.cshtml" />
     <Content Include="Views\Home\PrivacyPolicy.cshtml" />
     <Content Include="Views\Home\TermsOfUse.cshtml" />
+    <Content Include="Views\Home\Parent.cshtml" />
+    <Content Include="Views\Parent\Parent.cshtml" />
+    <Content Include="Views\Home\Student.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

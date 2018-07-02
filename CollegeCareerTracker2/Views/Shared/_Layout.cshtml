@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="57x57" href="http://CollegeCareerTracker.com/Content/images/Fav/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="http://CollegeCareerTracker.com/Content/images/Fav/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="http://CollegeCareerTracker.com/Content/images/Fav/apple-icon-72x72.png">
@@ -42,18 +43,15 @@
                 <a class="navbar-brand" href="/">CareerGPS</a>
                 @*@Html.ActionLink("College<span class='difFont'>CareerTracker</span>", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
-            <div class="navbar-collapse collapse">
+            @*<div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a id="howWorksLink" href="#">How it works</a></li>
                     <li><a id="aboutLink" href="#">About us</a></li>
-                    @*<li>@Html.ActionLink("How it works", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About us", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact us", "Contact", "Home")</li>*@
-                </ul>
-            </div>
+                </ul>      
+            </div>*@
         </div>
     </div>
-    <div class="body-content">
+    <div class="body-content flexColumn">
         @RenderBody()
 
         <footer>

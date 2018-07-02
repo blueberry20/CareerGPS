@@ -1,0 +1,173 @@
+﻿
+@{
+    ViewBag.Title = "Student";
+}
+
+
+
+<div class="container questionnairePage flex1">
+    <!--==================================student questions=========================-->
+
+    <h2>Student</h2>
+    <div id="studentContactInformation1" class="parentQuestions">
+        <h2>Tell us about yourself</h2>
+        <div class="formContainer">
+            <div class="form-group row">
+                <label class="shortLabel col-lg-4 col-md-4 col-sm-4 col-xs-12" for="firstnameStudent">First Name:</label>
+                <div class="shortField col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <input type="text" class="form-control required1" name="firstnameStudent" id="firstnameStudent" value="">
+                    <p class="displayError">Please enter your valid first name</p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="shortLabel col-lg-4 col-md-4 col-sm-4 col-xs-12" for="lastnameStudent">Last Name:</label>
+                <div class="shortField col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <input type="text" class="form-control required1" name="lastnameStudent" id="lastnameStudent" value="">
+                    <p class="displayError">Please enter your valid last name</p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="shortLabel col-lg-4 col-md-4 col-sm-4 col-xs-12" for="phonenumberStudent">Phone Number <span class="smallFont">(preferably mobile)</span>:</label>
+                <div class="shortField col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <input type="tel" class="form-control required1" name="phonenumberStudent" id="phonenumberStudent" value="">
+                    <p class="displayError">Please enter your valid phone number</p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="shortLabel col-lg-4 col-md-4 col-sm-4 col-xs-12" for="emailStudent">Email:</label>
+                <div class="shortField col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <input type="email" class="form-control required1" name="emailStudent" id="emailStudent" value="">
+                    <p class="displayError">Please enter your valid email</p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="shortLabel col-lg-4 col-md-4 col-sm-4 col-xs-12 required" for="childGradeStudent">Grade Level</label>
+                <div class="shortField col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <select class="form-control required1" id="childGradeStudent" name="childgradeStudent" value="">
+                        <option disabled selected value>Select</option>
+                        <option value="freshman">Freshman</option>
+                        <option value="sophomore">Sophomore</option>
+                        <option value="junior">Junior</option>
+                        <option value="senior">Senior</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <p class="displayError">Please fill out your grade</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button class="standardButton continueBtn" id="studentContactContinueBtn">Continue</button>
+            </div>
+
+            @*<div class="backNextButtonsWrapper flexDiv">
+                    <div class="column">
+                        <div class="goBackBtn">Go back</div>
+                    </div>
+                    <div class="column">
+                        <div id="studentContactNextBtn" class="nextBtn">Next</div>
+                    </div>
+                </div>*@
+
+        </div>
+        @*<div class="form-group row">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" class="form-control required"> Ok to notify my parent(s) about this awesome product.
+                    </label>
+                </div>
+            </div>*@
+
+    </div>
+
+
+    <div id="studentContactInformation2" class="parentQuestions">
+        <h2>Tell us about your parent(s)</h2>
+        <div class="formContainer">
+
+            <div class="form-group row">
+                <label class="shortLabel col-lg-4 col-md-4 col-sm-4 col-xs-12" for="firstnameParent">Parent 1 First Name:</label>
+                <div class="shortField col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <input type="text" class="form-control required2" name="firstnameParent" id="firstnameParent" value="">
+                    <p class="displayError">Please enter a valid parent's first name</p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="shortLabel col-lg-4 col-md-4 col-sm-4 col-xs-12" for="phonenumberParent"> Parent 1 Phone Number <span class="smallFont">(preferably mobile)</span>:</label>
+                <div class="shortField col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <input type="tel" class="form-control required2" name="phonenumberParent" id="phonenumberParent" value="">
+                    <p class="displayError">Please enter a valid parent's phone number</p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="shortLabel col-lg-4 col-md-4 col-sm-4 col-xs-12" for="emailParent"> Parent 1 Email:</label>
+                <div class="shortField col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <input type="email" class="form-control required2" name="emailParent" id="emailParent" value="">
+                    <p class="displayError">Please enter a valid parent's email</p>
+                </div>
+            </div>
+
+            <h3>(Optional):</h3>
+            <div class="form-group row">
+                <label class="shortLabel col-lg-4 col-md-4 col-sm-4 col-xs-12" for="firstnameParent2">Parent 2 First Name:</label>
+                <div class="shortField col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <input type="text" class="form-control" name="firstnameParent2" id="firstnameParent2" value="">
+                    <p class="displayError">Please enter a valid parent's first name</p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="shortLabel col-lg-4 col-md-4 col-sm-4 col-xs-12" for="phonenumberParent2"> Parent 2 Phone Number (preferably mobile):</label>
+                <div class="shortField col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <input type="tel" class="form-control" name="phonenumberParent2" id="phonenumberParent2" value="">
+                    <p class="displayError">Please enter a valid parent's phone number</p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="shortLabel col-lg-4 col-md-4 col-sm-4 col-xs-12" for="emailParent2"> Parent 2 Email:</label>
+                <div class="shortField col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <input type="email" class="form-control" name="emailParent2" id="emailParent2" value="">
+                    <p class="displayError">Please enter a valid parent's email</p>
+                </div>
+            </div>
+            <div class="form-group row termsRow">
+                @*<label class="shortLabel col-lg-4 col-md-4 col-sm-4 col-xs-12" for="classSelect"></label>*@
+                <div class="shortField col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="checkboxWrapper">
+                        <div class="checkbox">
+                            <input type="checkbox" name="checkbox" class="required2">
+                            <label>
+                                It's OK to notify my parent(s) about this awesome product.
+                            </label>
+                        </div>
+                        <p class="displayError termsError">You haven't selected "Ok to notify your parent(s)"</p>
+                    </div>
+                </div>
+            </div>
+            <p class="smallFont">By clicking "Submit" you agree to our <a href="/Home/TermsOfUse" target="_blank">Terms of Use</a> and <a href="/Home/PrivacyPolicy" target="_blank">Privacy Policy</a></p>
+
+        </div>
+        <div class="text-center">
+            <button class="standardButton" id="submitStudentBtn">Submit</button>
+        </div>
+    </div>
+
+
+    @*<div id="friendInvitation" class="parentQuestions">
+            <h2>Science has it that activities are enjoyed more when shared with friends. Invite them to join this career exploration adventure.</h2>
+            <div class="text-right">
+                <button class="standardButton" id="submitStudentBtn">Submit</button>
+            </div>
+        </div>*@
+
+
+    <div id="thankyouPageStudent" class="thankyouPage parentQuestions">
+        <p>Thank you!</p>
+        <p>We are so glad seeing you making this far!</p>
+        <p>We'll be following up with your parent(s) regarding the next steps on joining our program. </p>
+        <p>Cheers!</p>
+        <p>The CareerGPS Team</p>
+        <div class="text-center">
+            <button class="standardButton backHomeBtn">Back to Home Page</button>
+        </div>
+    </div>
+</div>
+
