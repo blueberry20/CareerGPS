@@ -7,9 +7,14 @@ $(document).ready(function () {
 
 
     $('.learnMoreButton').click(function () {
-        console.log('ff');
         $('html, body').animate({ scrollTop: $('#parentStudentBox').offset().top }, 'slow');
     });
+
+    $('.goBackButton').click(function () {
+        console.log('ff');
+        window.location.replace("../Home/Index");
+    });
+
 
     //on phone open number screen for entering phone number
     $('input[type="tel"]').on('touchstart', function () {
@@ -20,12 +25,7 @@ $(document).ready(function () {
         $(this).attr('type', 'text');
     });
 
-    $('.goBackBtn').click(function () {
-        var currentSlide = $(this).closest('.parentQuestions');
-        $(currentSlide).slideUp();
-        $(currentSlide).prev().slideDown();
-        $(currentSlide).prev().find('.nextBtn').show();
-    });
+
 
     $(".backHomeBtn").click(function () {
         window.location.replace("../Home/Index");
@@ -69,7 +69,7 @@ $(document).ready(function () {
     $('.optionsWrapper').click(function () {
         $('.optionsWrapper').css({ "background-color": "#fff" });
         selectedPaymentOption = $(this).attr("name");
-        $(this).css({ "background-color": "#0da697" });
+        $(this).css({ "background-color": "#12c0eb" });
     });
 
     
@@ -77,7 +77,7 @@ $(document).ready(function () {
     $('.optionsWrapper').hover(
         function () {
             if ($(this).attr("name") !== selectedPaymentOption) {
-                $(this).css({ "background-color": "#0da697" });
+                $(this).css({ "background-color": "#12c0eb" });
             }
      },
         function () {
@@ -235,6 +235,7 @@ $(document).ready(function () {
             }
         }).success(function (response) {
             console.log('success');   
+            $(".parentQuestions").hide();
             $('#thankyouPage').show();
                    
             //if ($(window).width() < 768) {
@@ -247,6 +248,7 @@ $(document).ready(function () {
             console.log('error');
             console.log(response);
             //remove when ajax returns success
+            $(".parentQuestions").hide();
             $('#thankyouPage').show();
                    
             //if ($(window).width() < 768) {

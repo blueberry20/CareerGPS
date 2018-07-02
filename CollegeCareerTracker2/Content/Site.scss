@@ -2,6 +2,7 @@
 $blue: #16d9e3;
 $darkBlue: #12c0eb;
 $coral: #ef4949;
+$lightGray: #a2a7a7;
 $blueGradient: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
 $lightBlueGradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 
@@ -71,17 +72,31 @@ section .container {
     width:100%;
 }
 
+.col-50 {
+    width:50%;
+}
+
+.col-30 {
+    width: 30%;
+    margin: 1%;
+}
 
 /*===================================Main slide=====================================================*/
 
 .mainContainer {
-    background-repeat:no-repeat;
-    background-position:0 -20px;
+    background-repeat: no-repeat;
+    background-position: 0 -20px;
     background-image: url('images/nicole-harrington.jpg');
-    background-size:cover;
-    min-height:100%;
+    min-height: 100%;
     padding: 2em 2em 0;
-    background-attachment:fixed;
+    background-attachment: fixed;
+    background-position: center;
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
 }
 
 #frontPageOverlay {
@@ -143,6 +158,11 @@ h1, h2, h3, h4, h5 {
 .navbar-brand {
     font-family:'open sans', sans-serif;
     color:#fff !important;
+    transition: all 0.5s;
+}
+
+.navbar-brand:hover, .navbar-brand:focus, .navbar-brand:active {
+    color: $blue !important;
 }
 
 
@@ -198,11 +218,12 @@ h5{
     font-weight:700;
     padding-left:1em;
     font-size:1.3em;
+    padding-left:0;
 }
 
 .standardButton {
     width: 150px;
-    height: 49px;
+    height: 50px;
     background-color: #000;
     border: none;
     color: #fff;
@@ -211,6 +232,14 @@ h5{
     cursor:pointer;
     transition:all 0.5s;
     margin:2em auto;
+}
+
+.backHomeBtn {
+    background-color: $lightGray;
+}
+
+.backHomeBtn:hover, .backHomeBtn:focus, .backHomeBtn:active {
+    background-color:#000;
 }
 
 
@@ -400,22 +429,22 @@ section .divider {
     padding-left: 2em !important;
 }
 
-.goBackBtn, .nextBtn {
-   width: 70px;
-    background-color: #57dee4;
-    padding: 3px;
+.goBackButton {
+    width: 100px;
+    background-color: $lightGray;
     text-align: center;
-    margin: 10px 0;
     cursor: pointer;
-}
-
-.nextBtn {
-    float:right;
-    display:none;
-}
-
-.goBackBtn:hover, .goBackBtn:focus, .goBackBtn:active, .nextBtn:hover, .nextBtn:focus, .nextBtn:active {
+    float: left;
+    border: 0;
+    height: 50px;
+    margin:20px 20px 20px 0;
     color:#fff;
+    transition: all 0.5s;
+}
+
+
+.goBackButton:hover, .goBackButton:focus, .goBackButton:active {
+    background-color:#000;
 }
 
 .displayError {
@@ -439,6 +468,7 @@ section .divider {
     font-family: "Source Sans Pro";
     text-align:center;
     margin:20px auto;
+    font-size:30px;
     }
 
     h3 {
@@ -457,7 +487,7 @@ section .divider {
     }
 
      .standardButton {
-         margin:1em auto;
+         margin:20px auto;
      }
 }
 
@@ -1025,16 +1055,13 @@ ol.mainNumberList > li:before {
      #termsQuestion label {
          line-height:initial;
      }
-     #thankyouPageStudent p, #thankyouPage p, #thankyouPageStudent h2, #thankyouPage h2 {
-        font-size:2em;
+    .thankyouPage p, .thankyouPage h2 {
+        font-size:1.4em;
         margin-bottom:0.5em;
-    }
-     #thankyouPageStudent p, #thankyouPage p {
         font-family: 'Source Sans Pro';
-        font-size: 2em;
-        font-weight: 300;
     }
-     #thankyouPageStudent h3, #thankyouPage h3 {
+
+     .thankyouPageStudent h3 {
          margin-bottom:0.5em;
      }
      #contactInformationStudent2 h3 {
@@ -1043,6 +1070,10 @@ ol.mainNumberList > li:before {
 
     section .container {
         padding:1em;
+    }
+
+    .continueButtonWrapper {
+        text-align:right;
     }
 }
 
