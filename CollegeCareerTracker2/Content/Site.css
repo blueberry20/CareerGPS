@@ -64,7 +64,7 @@ section .container {
 .mainContainer {
   background-repeat: no-repeat;
   background-position: 0 -20px;
-  background-image: url("images/nicole-harrington.jpg");
+  background-image: url("images/woman.jpg");
   min-height: 100%;
   padding: 2em 2em 0;
   background-attachment: fixed;
@@ -90,26 +90,14 @@ section .container {
   padding: 1em;
   margin: 1% auto 0; }
 
-#parentStudentBox, .flexDiv {
+.flexDiv {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  /*align-items: center;
-  align-content: flex-start;*/ }
-
-#parentStudentBox .column {
-  text-align: center; }
+  justify-content: center; }
 
 .textCenter {
   text-align: center; }
-
-.column {
-  width: 50%; }
-
-#parentStudentBox p {
-  margin: 1em 1em 2em;
-  font-size: 1.2em; }
 
 h1, h2, h3, h4, h5 {
   color: #000;
@@ -160,12 +148,6 @@ h3 {
   font-family: 'Source Sans Pro';
   font-size: 2em; }
 
-#parentStudentBox h4 {
-  color: #000;
-  font-size: 3em;
-  font-family: 'Shadows Into Light';
-  font-weight: 500; }
-
 h5 {
   font-weight: 700;
   padding-left: 1em;
@@ -201,6 +183,20 @@ h5 {
 .blueFont {
   color: #12c0eb; }
 
+/*================Main slide============================*/
+#parentStudentBox .flexColumn {
+  text-align: center; }
+
+#parentStudentBox p {
+  margin: 1em 1em 2em;
+  font-size: 1.2em; }
+
+#parentStudentBox h4 {
+  color: #000;
+  font-size: 3em;
+  font-family: 'Shadows Into Light';
+  font-weight: 500; }
+
 /*================Stat section 1============================*/
 #statsSection {
   display: flex;
@@ -235,7 +231,7 @@ section .divider {
 #statsSection2 {
   background-repeat: no-repeat;
   background-position: 0 -20px;
-  background-image: url("images/1.jpg");
+  background-image: url("images/globe.jpg");
   background-size: cover;
   min-height: 100%;
   padding: 2em 2em 0;
@@ -661,7 +657,17 @@ ol.mainNumberList > li:before {
     font-size: 25px; }
   .column {
     width: 50%;
-    padding: 1em; } }
+    padding: 1em; }
+  #logoContainer {
+    margin: 0 auto;
+    padding: 1% 0; }
+  #parentStudentBox h4 {
+    font-size: 2.5em; }
+  #parentStudentBox p {
+    margin: 1em;
+    font-size: 16px; }
+  .standardButton {
+    margin: 10px auto; } }
 
 @media only screen and (max-width: 1000px) {
   #logoContainer {

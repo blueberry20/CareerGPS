@@ -25,14 +25,6 @@ namespace CollegeCareerTracker2.Controllers
         {
             Parent parent = new Parent
             {
-                Aptitude = parentinfo.aptitude,
-                CareerExploration = parentinfo.careerExploration,
-                CareerRoadMapDevelopment = parentinfo.careerroadmapdevelopment,
-                StudentAchievementArchive = parentinfo.studentachievementarchive,
-                CollegeSelectionOptimizer = parentinfo.collegeselectionoptimizer,
-                CollegeAdmissionScheduler = parentinfo.collegeadmissionscheduler,
-                CareerRewards = parentinfo.careerrewards,
-                HabitBuilder = parentinfo.habitbuilder,
                 FirstName = parentinfo.firstName,
                 LastName = parentinfo.lastname,
                 PhoneNumber = parentinfo.phonenumber,
@@ -59,14 +51,6 @@ namespace CollegeCareerTracker2.Controllers
         {
             Student student = new Student
             {
-                Aptitude = studentinfo.aptitude,
-                CareerExploration = studentinfo.careerExploration,
-                CareerRoadMapDevelopment = studentinfo.careerroadmapdevelopment,
-                StudentAchievementArchive = studentinfo.studentachievementarchive,
-                CollegeSelectionOptimizer = studentinfo.collegeselectionoptimizer,
-                CollegeAdmissionScheduler = studentinfo.collegeadmissionscheduler,
-                CareerRewards = studentinfo.careerrewards,
-                HabitBuilder = studentinfo.habitbuilder,
                 FirstName = studentinfo.firstName,
                 LastName = studentinfo.lastname,
                 PhoneNumber = studentinfo.phonenumber,

@@ -25,14 +25,6 @@ namespace CollegeCareerTracker2.Controllers
         {
             Parent parent = new Parent
             {
-                Aptitude = parentinfo.aptitude,
-                CareerExploration = parentinfo.careerExploration,
-                CareerRoadMapDevelopment = parentinfo.careerroadmapdevelopment,
-                StudentAchievementArchive = parentinfo.studentachievementarchive,
-                CollegeSelectionOptimizer = parentinfo.collegeselectionoptimizer,
-                CollegeAdmissionScheduler = parentinfo.collegeadmissionscheduler,
-                CareerRewards = parentinfo.careerrewards,
-                HabitBuilder = parentinfo.habitbuilder,
                 FirstName = parentinfo.firstName,
                 LastName = parentinfo.lastname,
                 PhoneNumber = parentinfo.phonenumber,

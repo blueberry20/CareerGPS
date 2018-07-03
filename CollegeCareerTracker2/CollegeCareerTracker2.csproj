@@ -168,9 +168,6 @@
     <Content Include="Content\emails\ParentEmail.html" />
     <Content Include="Content\emails\Parent_InitiatedByStudent.html" />
     <Content Include="Content\emails\StudentEmail.html" />
-    <Content Include="Content\images\1.jpg" />
-    <Content Include="Content\images\2.jpg" />
-    <Content Include="Content\images\4.jpg" />
     <Content Include="Content\images\cctlogo.png" />
     <Content Include="Content\images\cctlogo2.png" />
     <Content Include="Content\images\Fav\android-icon-144x144.png" />
@@ -199,16 +196,13 @@
     <Content Include="Content\images\Fav\ms-icon-150x150.png" />
     <Content Include="Content\images\Fav\ms-icon-310x310.png" />
     <Content Include="Content\images\Fav\ms-icon-70x70.png" />
+    <Content Include="Content\images\globe.jpg" />
     <Content Include="Content\images\graphicDesigner.png" />
-    <Content Include="Content\images\matt-duncan.jpg" />
     <Content Include="Content\images\mentors.png" />
     <Content Include="Content\images\myactivities1.png" />
     <Content Include="Content\images\myactivities2.png" />
-    <Content Include="Content\images\nicole-harrington.jpg" />
-    <Content Include="Content\images\road2.jpg" />
-    <Content Include="Content\images\ryan-vitter.jpg" />
     <Content Include="Content\images\selectaskill.png" />
-    <Content Include="Content\images\trees.jpg" />
+    <Content Include="Content\images\woman.jpg" />
     <Content Include="Content\Site.min.css">
       <DependentUpon>Site.css</DependentUpon>
     </Content>

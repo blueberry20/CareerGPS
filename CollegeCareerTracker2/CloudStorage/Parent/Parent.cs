@@ -11,14 +11,6 @@ namespace CollegeCareerTracker2.CloudStorage.Parent
             RowKey = Guid.NewGuid().ToString();
         }
 
-        public string Aptitude { get; set; }
-        public string CareerExploration { get; set; }
-        public string CareerRoadMapDevelopment { get; set; }
-        public string StudentAchievementArchive { get; set; }
-        public string CollegeSelectionOptimizer { get; set; }
-        public string CollegeAdmissionScheduler { get; set; }
-        public string CareerRewards { get; set; }
-        public string HabitBuilder { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
