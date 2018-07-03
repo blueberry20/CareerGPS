@@ -155,9 +155,11 @@
     <Compile Include="CloudStorage\TableStorageClient.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ParentController.cs" />
+    <Compile Include="Enums.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\GradeEnumHelper.cs" />
     <Compile Include="Models\Parent.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -254,6 +256,7 @@
     <Content Include="Views\Home\Parent.cshtml" />
     <Content Include="Views\Parent\Parent.cshtml" />
     <Content Include="Views\Home\Student.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

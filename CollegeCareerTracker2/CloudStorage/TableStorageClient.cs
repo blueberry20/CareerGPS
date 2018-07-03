@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace CollegeCareerTracker2.CloudStorage
 {
-    public class TableStorageClient<T> where T : TableEntity
+    public class TableStorageClient<T> where T : ITableEntity
     {
         CloudTable table;
 
@@ -23,15 +23,33 @@ namespace CollegeCareerTracker2.CloudStorage
         public void Add(T entity)
         {
             TableOperation insertOperation = TableOperation.Insert(entity);
-            table.Execute(insertOperation);
+            TableResult result = table.Execute(insertOperation);
         }
 
         //olga
-        public void DeleteTable(T entity)
+        public void Delete(T entity)
         {
             TableOperation deleteOperation = TableOperation.Delete(entity);
             table.Execute(deleteOperation);
         }
 
+        public List<T> RetriveAll<T>(T pEntity) where T : ITableEntity, new()
+        {
+            TableQuery<T> query = new TableQuery<T>();
+            var returnValue = table.ExecuteQuery(query);
+            return returnValue.ToList() as List<T>;
+        }
+
+        public List<T> RetriveAllForPartition<T>(string pPartitionKey, T pEntity) where T : ITableEntity, new()
+        {
+            TableQuery<T> query = new TableQuery<T>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, pPartitionKey));
+            var returnValue = table.ExecuteQuery(query);
+            return returnValue.ToList() as List<T>;
+        }
+
+        public void DeleteTable()
+        {
+            table.DeleteIfExists();
+        }
     }
 }

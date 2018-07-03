@@ -87,6 +87,12 @@ namespace CollegeCareerTracker2.Controllers
             return View();
         }
 
+        public ActionResult Dashboard()
+        {
+            ViewBag.Message = "Dashboard";
+            return View();
+        }
+
 
         public ActionResult PrivacyPolicy()
         {
