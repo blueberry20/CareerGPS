@@ -83,7 +83,7 @@ section .container {
 
 /*===================================Main slide=====================================================*/
 
-.mainContainer {
+/*.mainContainer {
     background-repeat: no-repeat;
     background-position: 0 -20px;
     background-image: url('images/woman.jpg');
@@ -97,6 +97,18 @@ section .container {
     background-size: cover;
     height: 100%;
     width: 100%;
+}*/
+
+.mainContainer {
+    background-repeat: no-repeat;
+    background-image: url('images/woman.jpg');
+    padding: 2em 2em 0;
+    background-position: center;
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
 }
 
 #frontPageOverlay {
@@ -298,12 +310,9 @@ section .divider {
 /*==================Stat section 2=============================*/
 #statsSection2 {
     background-repeat: no-repeat;
-    background-position: 0 -20px;
     background-image: url('images/globe.jpg');
     background-size: cover;
-    min-height: 100%;
-    padding: 2em 2em 0;
-    background-attachment: fixed;
+    height: 100%;
     padding: 0;
     text-align: center;
     display:flex;
@@ -869,6 +878,13 @@ ol.mainNumberList > li:before {
     margin-left:-20px;
 }
 
+.record {
+    border:1px solid $blue;
+    margin:10px;
+    padding:20px;
+    border-radius:10px;
+}
+
 
 /*===================================Media queries========================================*/
 
@@ -1092,6 +1108,15 @@ ol.mainNumberList > li:before {
 
     .continueButtonWrapper {
         text-align:right;
+    }
+
+    .record {
+        width:100%;
+        padding:10px;
+    }
+
+    #dashboardContainer .container {
+        padding-bottom:2em;
     }
 }
 

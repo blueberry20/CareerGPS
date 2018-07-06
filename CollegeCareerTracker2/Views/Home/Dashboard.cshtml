@@ -11,69 +11,72 @@
 
 <div id="dashboardContainer">
     <div id="userDashboard" class="container">
-        <h2>User Dashboard 2017</h2>
+        <h2>User Dashboard</h2>
         <h3>Parents</h3>
-        @{
-            List<Parent> parents = tableStorage.RetriveAllForPartition("Parent", new Parent());
-            if (parents != null && parents.Count != 0)
-            {
-                foreach (Parent parent in parents)
+        <div class="flexDiv">
+            @{
+                List<Parent> parents = tableStorage.RetriveAllForPartition("Parent", new Parent());
+                if (parents != null && parents.Count != 0)
                 {
-                    <div class="record flexDiv">
-                        <div class="flexColumn">
-                            <div>Name: @parent.FirstName @parent.LastName</div>
-                            <div>Mobile phone: @parent.PhoneNumber</div>
-                            <div>Email: @parent.Email</div>
-                            <div># of students that will be participating: @parent.NumberOfStudents</div>
-                            <div>Children grades: @parent.StudentGradesArray</div>
-                            <div>Preference in terms: @parent.PaymentPreference</div>
-                        </div>
+                    foreach (Parent parent in parents)
+                    {
+                        
+                            <div class="column record">
+                                <div>Name: @parent.FirstName @parent.LastName</div>
+                                <div>Mobile phone: @parent.PhoneNumber</div>
+                                <div>Email: @parent.Email</div>
+                                <div># of students that will be participating: @parent.NumberOfStudents</div>
+                                <div>Children grades: @parent.StudentGradesArray</div>
+                                <div>Payment plan: @parent.PaymentPreference</div>
+                            </div>
+                       
+                    }
+                }
+                else
+                {
+                    <div class="emptyRecord record flexDiv">
+                        No records yet
                     </div>
                 }
+
+
             }
-            else
-            {
-                <div class="emptyRecord record flexDiv">
-                    No records yet
-                </div>
-            }
+        </div>
+        <div class="flexDiv">
 
-
-        }
-
-        <h3>Students</h3>
-        @{
-            List<Student> students = tableStorageStudent.RetriveAllForPartition("Student", new Student());
-            if (students != null && students.Count != 0)
-            {
-                foreach (Student student in students)
+            <h3>Students</h3>
+            @{
+                List<Student> students = tableStorageStudent.RetriveAllForPartition("Student", new Student());
+                if (students != null && students.Count != 0)
                 {
-                    <div class="record flexDiv">
-                        <div class="flexColumn">
-                            <div>Name: @student.FirstName @student.LastName</div>
-                            <div>Mobile phone: @student.PhoneNumber</div>
-                            <div>Email: @student.Email</div>
-                            <div>Grade level: @student.StudentGrade</div>
-                            <div>Parent name: @student.FirstParentFirstName</div>
-                            <div>Parent phone: @student.FirstParentPhoneNumber</div>
-                            <div>Parent email: @student.FirstParentEmail</div>
-                            <div>Parent name: @student.SecondParentFirstName</div>
-                            <div>Parent phone: @student.SecondParentPhoneNumber</div>
-                            <div>Parent email: @student.SecondParentEmail</div>
-                        </div>
+                    foreach (Student student in students)
+                    {
+                        
+                            <div class="column record">
+                                <div>Name: @student.FirstName @student.LastName</div>
+                                <div>Mobile phone: @student.PhoneNumber</div>
+                                <div>Email: @student.Email</div>
+                                <div>Grade level: @student.StudentGrade</div>
+                                <div>Parent name: @student.FirstParentFirstName</div>
+                                <div>Parent phone: @student.FirstParentPhoneNumber</div>
+                                <div>Parent email: @student.FirstParentEmail</div>
+                                <div>Parent name: @student.SecondParentFirstName</div>
+                                <div>Parent phone: @student.SecondParentPhoneNumber</div>
+                                <div>Parent email: @student.SecondParentEmail</div>
+                            </div>
+                       
+                    }
+                }
+                else
+                {
+                    <div class="emptyRecord record flexDiv">
+                        No records yet
                     </div>
                 }
+
+
             }
-            else
-            {
-                <div class="emptyRecord record flexDiv">
-                    No records yet
-                </div>
-            }
-
-
-        }
-
+        </div>
 
     </div>
 </div>

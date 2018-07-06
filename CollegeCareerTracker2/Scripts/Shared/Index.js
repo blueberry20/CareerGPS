@@ -25,12 +25,14 @@ $(document).ready(function () {
         $(this).attr('type', 'text');
     });
 
-
-
     $(".backHomeBtn").click(function () {
         window.location.replace("../Home/Index");
     });
 
+    if ($(window).width <= 768) {
+        $('.mainContainer').css({ "background-image": "url(images/woman_768_1024)" });
+        $('#statsSection2').css({ "background-image": "url(images/globe_768_1024)" });
+    }
 
 
     /*============================Parent flow=========================================*/
@@ -231,7 +233,7 @@ $(document).ready(function () {
                 email: $('#email').val(),
                 numberofstudents: $('#numberofstudents').val(),
                 studentgradesarray: JSON.stringify(studentGradesArray),
-                paymentpreference: $('input[name="paymentpreference"]:checked').val()
+                paymentpreference: selectedPaymentOption
             }
         }).success(function (response) {
             console.log('success');   

@@ -61,20 +61,31 @@ section .container {
   margin: 1%; }
 
 /*===================================Main slide=====================================================*/
+/*.mainContainer {
+    background-repeat: no-repeat;
+    background-position: 0 -20px;
+    background-image: url('images/woman.jpg');
+    min-height: 100%;
+    padding: 2em 2em 0;
+    background-attachment: fixed;
+    background-position: center;
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}*/
 .mainContainer {
   background-repeat: no-repeat;
-  background-position: 0 -20px;
   background-image: url("images/woman.jpg");
-  min-height: 100%;
   padding: 2em 2em 0;
-  background-attachment: fixed;
   background-position: center;
   webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100%;
-  width: 100%; }
+  height: 100%; }
 
 #frontPageOverlay {
   position: absolute;
@@ -230,12 +241,9 @@ section .divider {
 /*==================Stat section 2=============================*/
 #statsSection2 {
   background-repeat: no-repeat;
-  background-position: 0 -20px;
   background-image: url("images/globe.jpg");
   background-size: cover;
-  min-height: 100%;
-  padding: 2em 2em 0;
-  background-attachment: fixed;
+  height: 100%;
   padding: 0;
   text-align: center;
   display: flex;
@@ -645,6 +653,12 @@ ol.mainNumberList > li:before {
   text-align: center;
   margin-left: -20px; }
 
+.record {
+  border: 1px solid #16d9e3;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px; }
+
 /*===================================Media queries========================================*/
 @media (min-width: 768px) {
   .container {
@@ -768,7 +782,12 @@ ol.mainNumberList > li:before {
   section .container {
     padding: 1em; }
   .continueButtonWrapper {
-    text-align: right; } }
+    text-align: right; }
+  .record {
+    width: 100%;
+    padding: 10px; }
+  #dashboardContainer .container {
+    padding-bottom: 2em; } }
 
 @media only screen and (max-width: 650px) {
   .lowerAlpha {

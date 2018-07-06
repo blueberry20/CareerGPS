@@ -199,12 +199,14 @@
     <Content Include="Content\images\Fav\ms-icon-310x310.png" />
     <Content Include="Content\images\Fav\ms-icon-70x70.png" />
     <Content Include="Content\images\globe.jpg" />
+    <Content Include="Content\images\globe_768_1024.jpg" />
     <Content Include="Content\images\graphicDesigner.png" />
     <Content Include="Content\images\mentors.png" />
     <Content Include="Content\images\myactivities1.png" />
     <Content Include="Content\images\myactivities2.png" />
     <Content Include="Content\images\selectaskill.png" />
     <Content Include="Content\images\woman.jpg" />
+    <Content Include="Content\images\woman_768_1024.jpg" />
     <Content Include="Content\Site.min.css">
       <DependentUpon>Site.css</DependentUpon>
     </Content>
