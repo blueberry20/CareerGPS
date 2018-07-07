@@ -422,6 +422,13 @@ section .divider {
 .optionBox li {
   font-size: 12px; }
 
+.optionBox .smallText {
+  font-size: 10px;
+  color: gray;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0; }
+
 .displayError, #termsQuestion {
   display: none; }
 
