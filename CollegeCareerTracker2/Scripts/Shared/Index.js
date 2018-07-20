@@ -11,7 +11,6 @@ $(document).ready(function () {
     });
 
     $('.goBackButton').click(function () {
-        console.log('ff');
         window.location.replace("../Home/Index");
     });
 
@@ -219,21 +218,14 @@ $(document).ready(function () {
             type: 'POST',
             dataType: 'json',
             data: {
-                aptitude: $('input[name="aptitude"]:checked').val(),
-                careerexploration: $('input[name="careerexploration"]:checked').val(),
-                careerroadmapdevelopment: $('input[name="careerroadmapdevelopment"]:checked').val(),
-                studentachievementarchive: $('input[name="studentachievementarchive"]:checked').val(),
-                collegeselectionoptimizer: $('input[name="collegeselectionoptimizer"]:checked').val(),
-                collegeadmissionscheduler: $('input[name="collegeadmissionscheduler"]:checked').val(),
-                careerrewards: $('input[name="careerrewards"]:checked').val(),
-                habitbuilder: $('input[name="habitbuilder"]:checked').val(),
                 firstname: $('#firstname').val(),
                 lastname: $('#lastname').val(),
                 phonenumber: $('#phonenumber').val(),
                 email: $('#email').val(),
                 numberofstudents: $('#numberofstudents').val(),
                 studentgradesarray: JSON.stringify(studentGradesArray),
-                paymentpreference: selectedPaymentOption
+                paymentpreference: selectedPaymentOption,
+                date: new Date().toLocaleString()
             }
         }).success(function (response) {
             console.log('success');   
@@ -451,7 +443,8 @@ $(document).ready(function () {
                 parent1email: $('#emailParent').val(),
                 parent2firstname: $('#firstnameParent2').val(),
                 parent2phonenumber: $('#phonenumberParent2').val(),
-                parent2email: $('#emailParent2').val()
+                parent2email: $('#emailParent2').val(),
+                date: new Date().toLocaleString()
             }
         }).success(function (response) {
             console.log('success');

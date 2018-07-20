@@ -31,7 +31,8 @@ namespace CollegeCareerTracker2.Controllers
                 Email = parentinfo.email,
                 NumberOfStudents = parentinfo.numberofstudents,
                 StudentGradesArray = parentinfo.studentgradesarray,
-                PaymentPreference = parentinfo.paymentpreference
+                PaymentPreference = parentinfo.paymentpreference,
+                Date = parentinfo.date
             };
             try
             {
@@ -61,12 +62,41 @@ namespace CollegeCareerTracker2.Controllers
                 FirstParentEmail = studentinfo.parent1email,
                 SecondParentFirstName = studentinfo.parent2firstname,
                 SecondParentPhoneNumber = studentinfo.parent2phonenumber,
-                SecondParentEmail = studentinfo.parent2email
+                SecondParentEmail = studentinfo.parent2email,
+                Date = studentinfo.date
             };
             try
             {
                 StudentClient tableStorage = new StudentClient();
                 tableStorage.Add(student);
+                return Content("ok");
+            }
+            catch (Exception ex)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound, ex.Message);
+            }
+        }
+
+        public ActionResult deleteStudents()
+        {
+            try
+            {
+                StudentClient tableStorage = new StudentClient();
+                tableStorage.DeleteTable();
+                return Content("ok");
+            }
+            catch (Exception ex)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound, ex.Message);
+            }
+        }
+
+        public ActionResult DeleteParents()
+        {
+            try
+            {
+                ParentClient tableStorage = new ParentClient();
+                tableStorage.DeleteTable();
                 return Content("ok");
             }
             catch (Exception ex)
@@ -103,6 +133,12 @@ namespace CollegeCareerTracker2.Controllers
         public ActionResult TermsOfUse()
         {
             ViewBag.Message = "Terms Of Use";
+            return View();
+        }
+
+        public ActionResult Sandbox()
+        {
+            ViewBag.Message = "Sandbox";
             return View();
         }
     }

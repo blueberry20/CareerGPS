@@ -154,7 +154,6 @@
     <Compile Include="CloudStorage\Student\StudentClient.cs" />
     <Compile Include="CloudStorage\TableStorageClient.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ParentController.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -258,6 +257,7 @@
     <Content Include="Views\Home\Parent.cshtml" />
     <Content Include="Views\Home\Student.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Home\Sandbox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

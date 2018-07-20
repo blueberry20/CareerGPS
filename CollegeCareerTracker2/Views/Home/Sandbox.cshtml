@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Sandbox";
+}
+
+<h2>Sandbox</h2>
+<div id="sandbox" class="container">
+    <button id="deleteParentsBtn">Delete Parents</button>
+    <button id="deleteStudentsBtn">Delete Students</button>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('#deleteParentsBtn').click(function () {
+                $.ajax({
+                    url: '/Home/DeleteParents',
+                    type: 'GET'
+                }).success(function (response) {
+                    console.log('success');
+                }).error(function (response) {
+                    console.log('error');
+                    console.log(response);
+                })
+            });
+
+            $('#deleteStudentsBtn').click(function () {
+                $.ajax({
+                    url: '/Home/DeleteStudents',
+                    type: 'GET'
+                }).success(function (response) {
+                    console.log('success');
+                }).error(function (response) {
+                    console.log('error');
+                    console.log(response);
+                })
+            });
+
+        });
+    </script>
+}

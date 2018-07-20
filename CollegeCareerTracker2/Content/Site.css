@@ -684,6 +684,11 @@ ol.mainNumberList > li:before {
   padding: 20px;
   border-radius: 10px; }
 
+#sandbox {
+  min-height: 400px;
+  padding: 2em;
+  text-align: center; }
+
 /*===================================Media queries========================================*/
 @media (min-width: 768px) {
   .container {

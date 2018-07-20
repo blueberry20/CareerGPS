@@ -22,5 +22,6 @@ namespace CollegeCareerTracker2.CloudStorage.Student
         public string SecondParentFirstName { get; set; }
         public string SecondParentPhoneNumber { get; set; }
         public string SecondParentEmail { get; set; }
+        public string Date { get; set; }
     }
 }

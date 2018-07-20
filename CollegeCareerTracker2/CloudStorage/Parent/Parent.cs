@@ -18,5 +18,6 @@ namespace CollegeCareerTracker2.CloudStorage.Parent
         public string NumberOfStudents { get; set; }
         public string StudentGradesArray { get; set; }
         public string PaymentPreference { get; set; }
+        public string Date { get; set; }
     }
 }
