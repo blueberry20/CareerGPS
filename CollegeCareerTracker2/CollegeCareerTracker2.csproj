@@ -170,6 +170,7 @@
     <Content Include="Content\emails\ParentEmail.html" />
     <Content Include="Content\emails\Parent_InitiatedByStudent.html" />
     <Content Include="Content\emails\StudentEmail.html" />
+    <Content Include="Content\images\arrowDown.svg" />
     <Content Include="Content\images\cctlogo.png" />
     <Content Include="Content\images\cctlogo2.png" />
     <Content Include="Content\images\Fav\android-icon-144x144.png" />
@@ -252,7 +253,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\PrivacyPolicy1.cshtml" />
     <Content Include="Views\Home\PrivacyPolicy.cshtml" />
     <Content Include="Views\Home\TermsOfUse.cshtml" />
     <Content Include="Views\Home\Parent.cshtml" />

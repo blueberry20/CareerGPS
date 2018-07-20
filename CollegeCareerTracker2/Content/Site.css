@@ -76,6 +76,22 @@ section .container {
     height: 100%;
     width: 100%;
 }*/
+#arrowDown {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  left: calc(50% - 25px);
+  bottom: 5px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer; }
+  #arrowDown img {
+    position: absolute;
+    height: 40px;
+    left: 3px;
+    top: 5px; }
+
 .mainContainer {
   background-repeat: no-repeat;
   background-image: url("images/woman.jpg");
@@ -85,14 +101,15 @@ section .container {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100%; }
+  height: 100%;
+  position: relative; }
 
 #frontPageOverlay {
   position: absolute;
   width: 100%;
   left: 0;
   min-height: 100%;
-  top: 50px;
+  top: 0;
   background-color: rgba(129, 220, 212, 0.3); }
 
 #box {
@@ -196,7 +213,8 @@ h5 {
 
 /*================Main slide============================*/
 #parentStudentBox .flexColumn {
-  text-align: center; }
+  text-align: center;
+  width: 50%; }
 
 #parentStudentBox p {
   margin: 1em 1em 2em;
@@ -207,6 +225,9 @@ h5 {
   font-size: 3em;
   font-family: 'Shadows Into Light';
   font-weight: 500; }
+
+#parentStudentBox .standardButton {
+  margin-top: auto; }
 
 /*================Stat section 1============================*/
 #statsSection {
@@ -301,13 +322,10 @@ section .divider {
   .questionnairePage h2 {
     margin: 20px auto; }
 
-#studentStartBtn {
-  margin-bottom: 1em; }
-
 #logoContainer {
   width: 80%;
   margin: 1% auto;
-  padding: 3% 0;
+  padding: 1% 0;
   align-items: center;
   justify-content: flex-start; }
 
@@ -671,6 +689,19 @@ ol.mainNumberList > li:before {
   .container {
     max-width: 90%; } }
 
+/*height*/
+@media only screen and (max-height: 700px) {
+  h3 {
+    margin: 10px; }
+  #logoContainer {
+    width: 80%;
+    padding: 0; }
+  .standardButton {
+    margin: 1em auto; }
+  #parentStudentBox p {
+    margin: 1em 1em 1em; } }
+
+/*width*/
 @media only screen and (max-width: 1150px) {
   h1 {
     font-size: 4em; }
@@ -810,6 +841,9 @@ ol.mainNumberList > li:before {
   #parentStudentBox .column {
     text-align: center;
     width: 100%; }
+  #parentStudentBox .flexColumn {
+    width: 100%;
+    text-align: center; }
   section .container {
     padding: 2em; }
   section p {

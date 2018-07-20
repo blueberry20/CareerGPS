@@ -5,7 +5,7 @@ $(document).ready(function () {
     var selectedPaymentElement = "";
     var studentGradesArray = [];
 
-
+ 
     $('.learnMoreButton').click(function () {
         $('html, body').animate({ scrollTop: $('#parentStudentBox').offset().top }, 'slow');
     });
